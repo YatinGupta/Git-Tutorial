@@ -1,0 +1,64 @@
+1.First install git scm(google it and download for windows 32bit). Enable Git Bash and Git GUI in it. Remaining default set up.
+2.click on Git desktop icon and type ls. ls means list all files in the directory.
+We start git in directory where we keep our projects. By default it always starts in %HOMEDRIVE%%HOMEPATH%    .However we can change it by right click Git icon on desktop, then select properties and then change path in starts in field. Then again start Git.
+3.Now after it create your username. For it type
+$ git config --global user.name "kit" (here we assume kit as username)
+
+4. Now create your email id. For it type
+$ git config --global user.email "abc123@gmail.com"
+
+5. Now to create repository identify that where your git is starting in. we see it in step 2. For me it is C:\Users\Yatin Gupta.  Now here create a folder gitproject. you can check if git is in same directory where gitproject folder is by typing ls in Git. you should see gitproject folder among all specified folders. 
+
+6. Now type 
+$ git init gitproject
+
+7. Now check in gitproject, there form folders(hidden) as .git in which there will be folders hook, info etc
+
+8. Now go inside folder gitproject by type
+$ cd gitproject
+
+9. we get into gitproject as master
+
+10. Now to get status type
+$ git status
+
+It will give which branch we are, what files have changed, what files are not tracked, hint on what to do next,  
+
+11. Initially files present in repository such as readme.txt or test.txt (u can make ur own) are present but not commited to repository. To commit them type
+$ git add .
+this will commit all files. Now all committed files will be shown in green when seen in status. to commit specific file type
+$ git add readme.txt
+this will only commit readme.txt
+
+12. To remove file type
+$ git rm --cached test.txt
+this will uncommit test.txt file
+
+13. To make commit removal of file and all operations, type
+$ git commit -m "<message>" 
+like: $ git commit -m "initial commit"
+
+14. Your project is called working directory. We can refer it as repository.
+
+15. To check log 
+$ git log
+it will show log where last commit is shown by message we had done it.
+
+16. If u bought change to any file like readme.txt or test.txt then that file don't remain commited. You have to commit them by add instruction. If without commiting you try to commit transaction as $ git commit -m "initial commit" then error will be thrown. Thus first save those changes by adding files. You can use 
+$ git add .
+and now tries committing then commit will work. Note If file is in folder then it not means that file is also in repository. To add it to repository u need to use $ git add instruction. And to save changes in repository u use $ git commit 
+
+17. If u brought any change to readme.txt and modified version is not added to repository and you want to see that what is there actually that bringing change then type
+$ git diff
+this will result in display of difference. If readme.txt modified version added to repository then changes are done then this will show nothing. But 
+$ git diff --cached
+this will show that what is difference b/w now added version and previous version. However it must be followed by $ git diff , means first $ git diff must be entered and then this one, then only it will work.
+
+18. When git log is too much long to fix on screen then it will throw you to command line editor screen. To exit from there press SHIFT+zz
+
+19. Some shortcuts
+	(a) If type $ git log --oneline then all log will be shown without detail, just with message of each commit anf few other things.
+	(b) If you want to add every thing that is modified or newly added to repository while commiting then use
+	$ git commit -a -m "message"
+	(c)If use $ git status -s then it will show detail in shorthand.
+	  
